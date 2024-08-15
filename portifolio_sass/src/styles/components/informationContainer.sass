@@ -1,0 +1,78 @@
+@use '../variables'
+@use '../mixins'
+
+#information
+  @include mixins.center
+  flex-direction: column
+  background-color: variables.$bg-color-secondery
+  border-radius: variables.$card-border-radius
+  padding: 1rem
+  margin-bottom: 2rem
+  text-align: left
+  width: 80%
+
+
+  .info_card
+    @include mixins.center
+    justify-content: start
+    gap: 1rem
+    padding-bottom: .8rem
+    margin-bottom: .8rem
+    border-bottom: 2px solid #444
+    width: 100%
+
+    h3
+      color: variables.$text-color-secondery
+      font-size: .8rem
+      margin-bottom: .5rem
+
+    p
+      color: variables.$text-color
+      font-weight: bold
+    
+    svg
+      background-color: variables.$bg-color
+      border-radius: variables.$card-border-radius
+      padding: .4rem
+      width: 2rem
+      height: 2rem
+
+    #phone_icon
+      color: #6ce93b
+    
+    #email_icon
+      color: #6ab5b9
+    
+    #localiz_icon
+      color: #ff2727
+  
+    
+    // Responsividade para telas pequenas
+    @media (max-width: 410px)
+      #phone_icon, #email_icon, #localiz_icon
+        display: none
+
+    // Responsividade para telas médias
+    @media (min-width: 501px) and (max-width: 1024px)
+      #email_icon
+        color: #5faeb3
+    
+      #localiz_icon
+        color: #e62222
+
+
+    @media (min-width: 412px) and (max-width: 1024px)
+      #email_icon,
+      #localiz_icon,
+      #phone_icon
+        display: none
+      
+    
+    // Responsividade para telas grandes
+    @media (min-width: 1025px)
+      #email_icon
+        color: #6ab5b9
+        
+      #localiz_icon
+        color: #ff2727
+  
